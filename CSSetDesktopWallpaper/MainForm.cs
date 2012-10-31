@@ -71,8 +71,9 @@ namespace CSSetDesktopWallpaper
                 btnBrowseWallpaper.Enabled = false;
                 btnSetWallpaper.Enabled = false;
                 timerChangeWallpaper.Enabled = true;
+                WindowState = FormWindowState.Minimized;
+                Wallpaper.SetDesktopWallpaper(defaultWallpaper, WallpaperStyle.Fit);
             }
-
         }
 
 
@@ -170,13 +171,14 @@ namespace CSSetDesktopWallpaper
 
         private void timerChangeWallpaper_Tick(object sender, EventArgs e)
         {
-            if (changedTimes <= 6)
+            //24 * 15s = 6 minutes
+            if (changedTimes < 24)
             {
                 Wallpaper.SetDesktopWallpaper(defaultWallpaper, WallpaperStyle.Fit);
                 changedTimes++;
             }
-            //                    Thread.Sleep(30 * 1000);
-
+            else
+                Close();
         }
     }
 }

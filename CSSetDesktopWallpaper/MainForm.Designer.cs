@@ -207,7 +207,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "CSSetDesktopWallpaper";
+            this.Text = "Set Desktop Wallpaper GUI Version 1.0";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
